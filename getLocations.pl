@@ -25,7 +25,8 @@ while (my $inseq = $seq_in->next_seq) {
 }
 open my $fastafh, '<', $outfile;
 open my $outfastafh, '>', "$outfile.fa";
-while(my $seq = <$fastafh>){
+my $seq = <$fastafh>;
+while($seq = <$fastafh>){
   chomp($seq);
   print $outfastafh $seq;
 }
@@ -33,13 +34,13 @@ print $outfastafh "\n";
 close $fastafh;
 close $outfastafh;
 open my $infile, '<', "$outfile.fa";
-my $seq = <$infile>;
+$seq = <$infile>;
 chomp($seq);
 close my $infile;
 my $offset = 0;
 my $result = index($seq, $motif, $offset);
 while($result != -1){
-	print "$result\n";
+	print $result + 1 . "\n";
 	$offset = $result + 1;
 	$result = index($seq, $motif, $offset);
 }
