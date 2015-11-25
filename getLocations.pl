@@ -5,7 +5,8 @@ my $infile        = shift or die $usage;
 my $infileformat  = shift or die $usage;
 my $outfile       = shift or die $usage;
 my $outfileformat = shift or die $usage;
-my $motif 	  = shift or die $usage; 
+my $motif 	  = shift or die $usage;
+my $resultfile 	  = shift or die $usage; 
 
 print $motif . "\n";
 
@@ -32,16 +33,19 @@ while($seq = <$fastafh>){
 }
 print $outfastafh "\n";
 close $fastafh;
+`rm $outfile`;
 close $outfastafh;
 open my $infile, '<', "$outfile.fa";
 $seq = <$infile>;
 chomp($seq);
 close my $infile;
+`rm $outfile.fa`;
 my $offset = 0;
 my $result = index($seq, $motif, $offset);
+open my $resultfh, ">", $resultfile;
 while($result != -1){
-	print $result + 1 . "\n";
+	print $resultfh $result + 1 . "\n";
 	$offset = $result + 1;
 	$result = index($seq, $motif, $offset);
 }
-
+close $resultfh;
