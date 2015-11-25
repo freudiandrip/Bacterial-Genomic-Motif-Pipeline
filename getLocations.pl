@@ -24,6 +24,7 @@ my $seq_out = Bio::SeqIO->new(
 while (my $inseq = $seq_in->next_seq) {
     $seq_out->write_seq($inseq);
 }
+# open up fasta file, read in sequence lines and print as one line
 open my $fastafh, '<', $outfile;
 open my $outfastafh, '>', "$outfile.fa";
 my $seq = <$fastafh>;
@@ -33,13 +34,15 @@ while($seq = <$fastafh>){
 }
 print $outfastafh "\n";
 close $fastafh;
-`rm $outfile`;
+`rm $outfile`; # remove temp file
 close $outfastafh;
+# read in file with fasta seqence as one line
 open my $infile, '<', "$outfile.fa";
 $seq = <$infile>;
 chomp($seq);
 close my $infile;
-`rm $outfile.fa`;
+`rm $outfile.fa`;# remove temp file
+# parse seqence, search and print to results file each hit of motif
 my $offset = 0;
 my $result = index($seq, $motif, $offset);
 open my $resultfh, ">", $resultfile;

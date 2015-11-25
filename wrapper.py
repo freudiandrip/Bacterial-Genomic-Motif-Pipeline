@@ -25,5 +25,6 @@ def main(argv):
   print 'Results file is :', resultsfile
   print 'Motif is :', motif
   os.system("perl getLocations.pl " + genbankfile + " genbank testfasta fasta " + motif + " " + resultsfile)
+  # Insert call to second script here
 if __name__ == "__main__":
    main(sys.argv[1:])
