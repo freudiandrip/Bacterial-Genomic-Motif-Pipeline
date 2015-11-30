@@ -1,0 +1,80 @@
+motif hit: 1
+gene: ECs0074
+start / end site: [81468:83127](-)
+product: putative transport protein
+motif hit: 2
+gene: ECs0185
+start / end site: [207835:208432](+)
+product: RNAse HII
+motif hit: 3
+gene: ECs0220
+start / end site: [248968:249763](-)
+product: hypothetical protein
+motif hit: 4
+gene: ECs0247
+start / end site: [278410:278884](+)
+product: hypothetical protein
+motif hit: 5
+gene: ECs0283
+start / end site: [306450:306861](-)
+product: putative tail fiber protein
+motif hit: 6
+gene: ECs0589
+start / end site: [648483:649005](-)
+product: hypothetical protein
+motif hit: 7
+gene: ECs0641
+start / end site: [716817:718038](-)
+product: hypothetical protein
+motif hit: 8
+gene: ECs0658
+start / end site: [733589:735248](+)
+product: putative sensor-type protein
+motif hit: 9
+gene: ECs0766
+start / end site: [853709:854132](-)
+product: hypothetical protein
+motif hit: 10
+gene: ECs0894
+start / end site: [977488:977956](+)
+product: putative toxin
+motif hit: 11
+gene: ECs0909
+start / end site: [993744:995283](+)
+product: putative transport protein
+motif hit: 12
+gene: ECs0910
+start / end site: [995300:996221](+)
+product: putative transport system permease protein
+motif hit: 13
+gene: ECs0926
+start / end site: [1012709:1013246](+)
+product: putative DEOR-type transcriptional regulator
+motif hit: 14
+gene: ECs0978
+start / end site: [1070539:1071832](+)
+product: serine tRNA synthetase
+motif hit: 15
+gene: ECs1050
+start / end site: [1157874:1158243](-)
+product: hypothetical protein
+motif hit: 16
+gene: ECs1075
+start / end site: [1171758:1172529](+)
+product: hypothetical protein
+motif hit: 17
+gene: ECs1150
+start / end site: [1235614:1236307](-)
+product: response transcriptional regulator for torA
+motif hit: 18
+gene: ECs1454
+start / end site: [1491717:1492923](+)
+product: flagellar hook protein FlgE
+motif hit: 19
+gene: ECs2064
+start / end site: [2052287:2052515](+)
+product: hypothetical protein
+motif hit: 20
+gene: ECs2193
+start / end site: [2191066:2191621](-)
+product: putative ante-terminator protein
