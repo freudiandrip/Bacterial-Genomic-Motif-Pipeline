@@ -8,7 +8,7 @@ import os
 import sys, Bio, getopt
 from Bio import SeqIO
 
-def gene_locations(gbk, posns, motif):
+def gene_locations(gbk, posns, motif, oufile):
     # using biopython to parse through gbk file
     gbank = SeqIO.read(open(gbk, "r"), 'genbank')
     #data ouput
@@ -44,14 +44,16 @@ def gene_locations(gbk, posns, motif):
     #done reading the motif file.
     infile_motif.close()
     #writing results into output file with gene, CDS region, product.
-    outfile = open("gene-locations.txt", "w")
+    outfile = open(outfile, "w")
+    #first column of the outfile.
+    outfile.write('motif hit:\t' + 'gene:\t' + 'start_end_site:\t' + 'product:\t')
     #extracting info from list to output file.
     for i in range(len(genes)):
         #writes out info related per motif hit.
-        outfile.write('motif hit: ' + str(i+1) + '\n')
-        outfile.write('gene: ' + str(genes[i]) + '\n')
-        outfile.write('start / end site: ' + str(start_end_site[i]) + '\n')
-        outfile.write('product: ' + str(product[i]) + '\n')
+        outfile.write(str(i+1) + '\t')
+        outfile.write(str(genes[i]) + '\t')
+        outfile.write(+ str(start_end_site[i]) + '\t')
+        outfile.write(+ str(product[i]) + '\t')
     #file writing complete
     outfile.close()
 
@@ -60,14 +62,15 @@ def main(argv):
   gbk = ''
   positions = ''
   motif = ''
+  outfile = ''
   try:
-      opts, args = getopt.getopt(argv,"hg:p:m:",["genbank-file=","positions-file=","motif="])
+      opts, args = getopt.getopt(argv,"hg:p:m:o:",["genbank-file=","positions-file=","motif=","outfile="])
   except getopt.GetoptError:
-      print 'biopy_gene_location.py -g <genbank-file> -p <positions-file> -m <motif>'
+      print 'biopy_gene_location.py -g <genbank-file> -p <positions-file> -m <motif> -o <outfile>'
       sys.exit(2)
   for opt, arg in opts:
      if opt == '-h':
-        print 'biopy_gene_location.py -g <genbank-file> -p <positions-file> -m <motif>'
+        print 'biopy_gene_location.py -g <genbank-file> -p <positions-file> -m <motif> -o <outfile>'
         sys.exit()
      elif opt in ("-g", "--genbank-file"):
         gbk = arg
@@ -75,7 +78,8 @@ def main(argv):
         positions = arg
      elif opt in ("-m", "--motif"):
         motif = arg
-  gene_locations(gbk, positions, motif)
+    elif opt in ("-o", "--outfile")
+  gene_locations(gbk, positions, motif, outfile)
 
 if __name__ == "__main__":
    main(sys.argv[1:])
