@@ -1,0 +1,66 @@
+hit #:	motif position:	gene:	start_end_site:	product:
+1	4806	murC	[100764:102240](+)	UDP-N-acetylmuramate:L-alanine ligase
+2	32701	fhuD	[170574:171465](+)	iron(3+)-hydroxamate import ABC transporter periplasmic binding protein
+3	60863	ykgJ	[303852:304182](-)	UPF0153 cysteine cluster protein
+4	61450	ykgO	[312373:312514](-)	RpmJ-like protein
+5	62542	ykgM	[312513:312777](-)	50S ribosomal protein L31 type B; alternative zinc-limitation L31 protein
+6	97670	tauA	[385231:386194](+)	taurine ABC transporter periplasmic binding protein
+7	100798	pgm	[713557:715198](+)	phosphoglucomutase
+8	114807	pepN	[990621:993234](+)	aminopeptidase N
+9	115416	mgsA	[1026556:1027015](-)	methylglyoxal synthase
+10	130916	rutC	[1071772:1072159](-)	putative aminoacrylate deaminase, reactive intermediate detoxification; weak enamine/imine deaminase activity
+11	146681	csgE	[1102151:1102541](-)	curlin secretion specificity factor
+12	148691	cohE	[1202258:1202933](-)	e14 prophage; repressor protein phage e14
+13	170734	chaC	[1272506:1273202](+)	cation transport regulator
+14	233820	yciO	[1324097:1324718](+)	putative RNA binding protein
+15	234237	ycjN	[1371908:1373201](+)	putative ABC sugar transporter periplasmic binding protein
+16	264491	ynbA	[1477620:1478226](+)	inner membrane protein
+17	265845	insQ	[1503716:1504865](+)	IS609 transposase B
+18	283073	yncH	[1526939:1527152](+)	IPR020099 family protein
+19	302514	yddA	[1577656:1579342](-)	putative multidrug ABC transporter permease/ATPase
+20	303965	mlc	[1667343:1668564](-)	glucosamine anaerobic growth regulon transcriptional repressor; autorepressor
+21	312561	tqsA	[1673912:1674947](+)	pheromone AI-2 transporter
+22	329248	cnu	[1704948:1705164](+)	nucleoid-associated oriC-binding protein; H-NS and StpA stabilizing factor
+23	385421	yeaJ	[1872040:1873531](+)	putative diguanylate cyclase
+24	388041	yoaE	[1900028:1901585](-)	putative membrane protein/conserved protein
+25	443291	yecC	[1997061:1997814](-)	putative ABC transporter ATPase
+26	507014	hisF	[2095843:2096620](+)	imidazole glycerol phosphate synthase, catalytic subunit with HisH
+27	555949	yehK	[2203971:2204289](+)	uncharacterized protein
+28	566617	yejB	[2274178:2275273](+)	microcin C ABC transporter permease
+29	569662	yejH	[2280631:2282392](+)	putative ATP-dependent DNA or RNA helicase
+30	589847	arnE	[2372556:2372892](+)	undecaprenyl phosphate-alpha-L-ara4N exporter; flippase ArnEF subunit
+31	607225	pta	[2414746:2416891](+)	phosphate acetyltransferase
+32	613545	yfcQ	[2450586:2451075](-)	putative fimbrial-like adhesin protein
+33	619591	ypdC	[2501129:2501987](+)	putative DNA-binding protein
+34	633397	eutD	[2572488:2573505](-)	phosphate acetyltransferase
+35	685811	pepB	[2655074:2656358](-)	aminopeptidase B
+36	698663	rnc	[2703382:2704063](-)	RNase III
+37	700276	nrdI	[2800964:2801375](+)	NrdEF cluster assembly flavodoxin
+38	713571	ygaY	join{[2808315:2808576](+), [2808569:2809493](+)}	-
+39	720518	yqcC	[2923783:2924113](-)	DUF446 family protein
+40	723270	yqfB	[3043311:3043623](-)	UPF0267 family protein
+41	732942	endA	[3090346:3091054](+)	DNA-specific endonuclease I
+42	734813	hybF	[3139976:3140318](-)	protein involved with the maturation of hydrogenases 1 and 2
+43	747150	ribB	[3183812:3184466](-)	3,4-dihydroxy-2-butanone-4-phosphate synthase
+44	750839	ttdB	[3207370:3207976](+)	L-tartrate dehydratase, beta subunit
+45	775433	ygjV	[3241192:3241744](-)	Imp-YgjV family inner membrane protein
+46	790883	sspB	[3376278:3376776](-)	ClpXP protease specificity enhancing factor
+47	791843	gspC	[3455577:3456393](+)	general secretory pathway component, cryptic
+48	797865	slyD	[3477906:3478497](-)	FKBP-type peptidyl prolyl cis-trans isomerase (rotamase)
+49	797943	dppA	[3706097:3707705](-)	dipeptide/heme ABC transporter periplasmic binding protein; dipeptide chemotaxis receptor
+50	803012	rhsJ	[3767220:3768165](+)	-
+51	840866	yicH	[3830456:3832166](+)	putative inner membrane-anchored periplasmic AsmA family protein
+52	841308	wecD	[3974466:3975141](+)	TDP-fucosamine acetyltransferase
+53	843122	yigE	[4000291:4001056](-)	DUF2233 family protein
+54	847468	fre	[4026526:4027228](+)	NAD(P)H-flavin reductase
+55	848066	fdoI	[4081224:4081860](-)	formate dehydrogenase-O, cytochrome b556 subunit
+56	861011	fpr	[4113725:4114472](-)	ferredoxin-NADP reductase; flavodoxin reductase
+57	896830	yjcC	[4275470:4277057](+)	putative membrane-anchored cyclic-di-GMP phosphodiesterase
+58	906226	frdD	[4379006:4379366](-)	fumarate reductase (anaerobic), membrane anchor subunit
+59	934113	hflC	[4403299:4404304](+)	HflB protease modulator specific for phage lambda cII repressor
+60	940310	bsmA	[4416440:4416770](-)	bioflm peroxide resistance protein
+61	944723	ytfE	[4431320:4431983](-)	iron-sulfur cluster repair protein RIC
+62	977596	yjgZ	[4501259:4501589](+)	uncharacterized protein
+63	984398	mrr	[4586948:4587863](+)	methylated adenine and cytosine restriction protein
+64	990659	yjiA	[4587908:4588865](-)	metal-binding GTPase
+65	1008340	yjjZ	[4605803:4606040](+)	uncharacterized protein
