@@ -8,7 +8,7 @@ import os
 import sys, Bio, getopt
 from Bio import SeqIO
 
-def gene_locations(gbk, posns, motif, output):
+def gene_locations(gbk, posns, motif, output, rangestart, rangeend):
     # using biopython to parse through gbk file
     gbank = SeqIO.read(open(gbk, "r"), 'genbank')
     #data ouput
@@ -23,7 +23,6 @@ def gene_locations(gbk, posns, motif, output):
     #checking each motif, and if there is a hit in the gbk data.
     while motif_posn != "":
         i = 0
-        motifs.append(motif_posn)
         #while loop to traverse through gbank data:
         while i < len(gbank.features):
             feature = gbank.features[i]
@@ -34,11 +33,15 @@ def gene_locations(gbk, posns, motif, output):
                 codon = str(feature.location)[idx1 + 1:idx2]
                 posn = int(motif_posn) + len(motif) - int(codon)
             #only want genes if 200 away from a motif
-            if posn <= 200 and posn > 0:
+                if posn <= int(rangeend) and posn > int(rangestart):
             #grabbing gbank features from ADT storageself
-                genes.append(feature.qualifiers['gene'][0])
-                start_end_site.append(feature.location)
-                product.append(feature.qualifiers['product'][0])
+                   genes.append(feature.qualifiers['gene'][0])
+                   start_end_site.append(feature.location)
+                   motifs.append(motif_posn.rstrip())
+                   if 'product' in feature.qualifiers:
+                     product.append(feature.qualifiers['product'][0])
+                   else:
+                     product.append("-")
             #moving on to the next entry in gbank
             i += 1
         #moving on to next motif in positions file
@@ -53,7 +56,7 @@ def gene_locations(gbk, posns, motif, output):
     for i in range(len(genes)):
     #writes out info related per motif hit.
         outfile.write(str(i+1) + '\t')
-        outfile.write(motifs[i] + '\t')
+        outfile.write(str(motifs[i]) + '\t')
         outfile.write(str(genes[i]) + '\t')
         outfile.write(str(start_end_site[i]) + '\t')
         outfile.write(str(product[i]) + '\n')
@@ -83,7 +86,7 @@ def main(argv):
             motif = arg
         elif opt in ("-o", "--outfile"):
             outfile = arg
-    gene_locations(gbk, positions, motif, outfile)
+    gene_locations(gbk, positions, motif, outfile,0, 200)
 
 if __name__ == "__main__":
    main(sys.argv[1:])

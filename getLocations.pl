@@ -8,7 +8,6 @@ my $outfileformat = shift or die $usage;
 my $motif 	  = shift or die $usage;
 my $resultfile 	  = shift or die $usage; 
 
-print $motif . "\n";
 
 # create one SeqIO object to read in,and another to write out
 my $seq_in = Bio::SeqIO->new(

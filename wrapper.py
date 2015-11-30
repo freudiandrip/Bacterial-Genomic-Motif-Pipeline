@@ -25,8 +25,13 @@ def main(argv):
   print 'Genbank file is :', genbankfile
   print 'Results file is :', resultsfile
   print 'Motif is :', motif
-  os.system("perl getLocations.pl " + genbankfile + " genbank testfasta fasta " + motif + " " + resultsfile)
+  os.system("perl getLocations.pl " + genbankfile + " genbank testfasta fasta " + motif + " " + resultsfile + ".posns")
+  print 'Genbank File Parsed for Motif Matches'
   # Insert call to second script here
+  os.system("python biopy_gene_locations.py -g "+ genbankfile + " -p " + resultsfile + ".posns -m " + motif + " -o " + resultsfile + ".txt")
+  print 'Results Tabulated - Cleaning up'
+  os.system("rm " + resultsfile + ".posns")
+  print 'Done - Code available at https://github.com/sherbert-lemon/Bacterial-Genomic-Motif-Pipeline' 
 
 if __name__ == "__main__":
    main(sys.argv[1:])
