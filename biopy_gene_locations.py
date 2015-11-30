@@ -15,25 +15,27 @@ def gene_locations(gbk, posns, motif, oufile):
     genes = [] #no characterization of gene --> empty string pasted in
     start_end_site = []
     product = []
+    motifs = []
     #while loop to parse through gbk data; adds genes, product,
     # start + end site per annotation in CDS.
     infile_motif = open(posns, "r")
     motif_posn = infile_motif.readline()
     #checking each motif, and if there is a hit in the gbk data.
     while motif_posn != "":
+        i = 0
+        motifs.append(motif_posn)
         #while loop to traverse through gbank data:
-	i = 0
         while i < len(gbank.features):
             feature = gbank.features[i]
-	    if feature.type == "CDS":
-              #print feature.qualifiers['codon_start']
-              #print int(motif_posn) + len(motif) - int(feature.qualifiers['codon_start'][0])
-              idx1 = str(feature.location).find("[")
-              idx2 = str(feature.location).find(":")
-              codon = str(feature.location)[idx1 + 1:idx2]
-              posn = int(motif_posn) + len(motif) - int(codon)
-              if posn <= 200 and posn > 0:
-            #grabbing gbank features from ADT storage.
+            #indexing for the start codon for gene
+            if feature.type == "CDS":
+                idx1 = str(feature.location).find("[")
+                idx2 = str(feature.location).find(":")
+                codon = str(feature.location)[idx1 + 1:idx2]
+                posn = int(motif_posn) + len(motif) - int(codon)
+            #only want genes if 200 away from a motif
+            if posn <= 200 and posn > 0:
+            #grabbing gbank features from ADT storageself
                 genes.append(feature.qualifiers['gene'][0])
                 start_end_site.append(feature.location)
                 product.append(feature.qualifiers['product'][0])
@@ -46,14 +48,15 @@ def gene_locations(gbk, posns, motif, oufile):
     #writing results into output file with gene, CDS region, product.
     outfile = open(outfile, "w")
     #first column of the outfile.
-    outfile.write('motif hit:\t' + 'gene:\t' + 'start_end_site:\t' + 'product:\t')
+    outfile.write('hit #:\t' 'motif position:\t' + 'gene:\t' + 'start_end_site:\t' + 'product:\t')
     #extracting info from list to output file.
     for i in range(len(genes)):
-        #writes out info related per motif hit.
+    #writes out info related per motif hit.
         outfile.write(str(i+1) + '\t')
+        outfile.write(motifs[i] + '\t')
         outfile.write(str(genes[i]) + '\t')
         outfile.write(+ str(start_end_site[i]) + '\t')
-        outfile.write(+ str(product[i]) + '\t')
+        outfile.write(+ str(product[i]) + '\n')
     #file writing complete
     outfile.close()
 

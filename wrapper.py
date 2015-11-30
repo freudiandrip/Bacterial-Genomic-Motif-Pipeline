@@ -6,6 +6,7 @@ def main(argv):
   genbankfile = ''
   resultsfile = ''
   motif = ''
+  outfile = ''
   try:
       opts, args = getopt.getopt(argv,"hg:r:m:",["genbank-file=","results-file=","motif="])
   except getopt.GetoptError:
@@ -26,5 +27,6 @@ def main(argv):
   print 'Motif is :', motif
   os.system("perl getLocations.pl " + genbankfile + " genbank testfasta fasta " + motif + " " + resultsfile)
   # Insert call to second script here
+
 if __name__ == "__main__":
    main(sys.argv[1:])
