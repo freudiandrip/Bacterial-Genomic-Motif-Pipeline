@@ -5,3 +5,5 @@ The pipeline consists of a series of scripts that ultimately characterizes a giv
 Usage example:
 
 python wrapper.py -g FullEColi.gbff -r ResultsFile -m ATCGTGT
+
+Written by: Alister D'Costa (adcosta17) and Kim Nguyen (sherbert-lemon).
